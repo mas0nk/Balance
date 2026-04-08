@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Balance Design System Colors (iOS Semantic equivalents) */
+  --color-primary: #006565;
+  --color-primary-light: #008a8a;
+  --color-secondary: #7b41b3;
+  --color-surface: #f9f9fe;
+  --color-surface-secondary: #ededf2;
+  --color-surface-tertiary: #e2e2e7;
+  
+  /* Semantic Labels */
+  --color-label-primary: #1a1c1f;
+  --color-label-secondary: #3e4949;
+  --color-label-tertiary: #6e7979;
+  
+  /* Status Colors */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+}
+
+@layer utilities {
+  .liquid-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .liquid-glass-dark {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0, 101, 101, 0.08);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  @apply bg-surface text-label-primary font-sans antialiased;
+  background: radial-gradient(circle at top left, var(--color-surface), var(--color-surface-secondary));
+  min-height: 100vh;
+}
